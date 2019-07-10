@@ -8,21 +8,24 @@
 // cioè il numero di volte che l’utente ha inserito un numero consentito.
 console.log("inizio script");
 
-
-function numGen () {
-  var n = Math.floor((Math.random() * 100) +1);
+// funzione generatore di 16 numeri random da 1 a 100
+function numGen (min, max) {
+  var n = Math.floor((Math.random() * (max - min) + min));
   return n;
 }
-
+// array vuoto dove inserire i numeri generati
 var list =[];
 console.log(list);
+// ciclo while generatore dei 16 numeri random
 var i =1;
 while (i <= 16) {
-  var num = numGen();
-  controln = list.indexOf(num);
-  if (controln < 0) {
+  var num = numGen(1, 100);
+  var ctrln = list.indexOf(num);
+  if (ctrln < 0) {
     list.push(num);
     i++;
+console.log("cont if" + ctrln);
   }
 
 }
+console.log("controllo" + ctrln);
